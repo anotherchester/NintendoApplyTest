@@ -10,13 +10,15 @@ public class ApplyTest extends BaseTest {
     private JobOpeningsPage jobOpeningsPage;
 
     @Test
-    public void testApply() {
+    public void testApply() throws InterruptedException {
 
         basePage = new BasePage(driver);
         homePage = new HomePage(driver);
         careersPage = homePage.clickCareersButton();
+        Thread.sleep(2500);
         careersPage.fillSearchField("tester");
         jobOpeningsPage = careersPage.clickSearchButton();
+        Thread.sleep(3000);
         jobOpeningsPage.clickSoftwareTester();
 
 
